@@ -38,6 +38,7 @@ class ResultItemSearchFragment : Fragment() {
         binding.rlLoading.visibility = View.VISIBLE
         binding.incNotConn.lyNotConn.visibility = View.GONE
         binding.nvItemResult.visibility = View.GONE
+        viewModel.enableSearch()
         getSearchItemResult()
     }
 
