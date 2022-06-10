@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="@string/iv_desc_suggestion"
+            android:scaleType="fitCenter"
+            android:layout_weight="0.1"
+            android:src="@drawable/ic_baseline_query_builder_24"
+            app:tint="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tv_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.8"
+            android:layout_marginStart="5dp"
+            android:gravity="start"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/iv_thumbnail"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="0.1"
+            android:contentDescription="@string/iv_sel_suggestion"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_arrow_top_left_svgrepo_com"
+            app:tint="@android:color/darker_gray"/>
+
+    </TableRow>
+</androidx.appcompat.widget.LinearLayoutCompat>

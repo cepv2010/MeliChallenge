@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MeliChallenge</string>
+    <string name="try_again">Reintentar</string>
+    <string name="search_hint">Buscar en Mercado libre</string>
+    <string name="not_conn_msg_title">!Parece que no hay internet!</string>
+    <string name="not_conn_msg_desc">Revisa tu conexión para seguir navegando</string>
+    <string name="not_found_msg_title">No encontramos publicaciones</string>
+    <string name="not_found_msg_desc">Revisa que la palabra esté bien escrita</string>
+    <string name="desc_iv_back">Retorno al activity origen</string>
+    <string name="desc_iv_thumbnail">Thumbnail resultado de la busqueda</string>
+    <string name="msg_hi">Hola, este es el challenge para MELI, para iniciar con la búsqueda selecciona la opción \'Buscar en Mercado Libre\'</string>
+    <string name="free_shipping">Envío gratis</string>
+    <string name="iv_desc_suggestion">Icono de sugerencia</string>
+    <string name="iv_sel_suggestion">Selección de sugerencia</string>
+
+</resources>
