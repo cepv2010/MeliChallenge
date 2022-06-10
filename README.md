@@ -1,6 +1,6 @@
 # Meli Challenge
 
-Desarrollo del challenge en al etapa de la fase tecnica, en donde se requiere el desarrollo du una app que contenga las siguientes condiciones:
+Desarrollo del challenge en al etapa de la fase tecnica, en donde se requiere el desarrollo de una app que contenga las siguientes condiciones:
 
 - Campo de busqueda.
 - Visualización de resultados de la búsqueda.
@@ -20,7 +20,7 @@ El app esta configurada para que se construya sin problemas. Tiene configurado F
 Si desea instalar por apk, los links son los siguientes:
 
 - [Firebase](https://appdistribution.firebase.dev/i/76649a82af4b317a): Para descargarla hay que registrase como tester y debera serme notifcado para habilitar el acceso
-- [testapp.io](https://portal.testapp.io/apps/install/d348kKLJvrkrZ): Su descarga es libre y esta abierta al publico no hay necesidad de registrarse
+- [testapp.io]([TestApp.io - Portal](https://portal.testapp.io/apps/install/xB93qkgDZ0VKO)): Su descarga es libre y esta abierta al publico no hay necesidad de registrarse
 
 **Que contiene:**
 
