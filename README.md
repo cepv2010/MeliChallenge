@@ -6,27 +6,32 @@ Desarrollo del challenge en al etapa de la fase tecnica, en donde se requiere el
 - Visualización de resultados de la búsqueda.
 - Detalle de un producto.
 
+Para acceder a la documentación tecnica accede al sigueinte link: 
+
+[Documento técnico MELI Challenge](https://guttural-shovel-6d4.notion.site/Documento-t-cnico-MELI-Challenge-a0079c008954435884e8cbb5008036a8)
+
 **La app esta desarrollada con las siguientes dependencias:**
 **min SDK:** 28
 **Lenguaje:** Kotlin 1.6.21
 **Base de datos:** Room
 
-
 El app esta configurada para que se construya sin problemas. Tiene configurado Firebase, por lo tanto el archivo `google-services.json` se encuentra precargado, si desea cambiarlo, es reemplazarlo en el directorio `app`.
 
 Si desea instalar por apk, los links son los siguientes:
+
 - [Firebase](https://appdistribution.firebase.dev/i/76649a82af4b317a): Para descargarla hay que registrase como tester y debera serme notifcado para habilitar el acceso
 - [testapp.io](https://portal.testapp.io/apps/install/d348kKLJvrkrZ): Su descarga es libre y esta abierta al publico no hay necesidad de registrarse
 
 **Que contiene:**
+
 - Unit Test
 - Navigation Component
 - Room Database
 - Dagger Hilt (Dependency Injection)
 - Firebase
 
-
 **Que dependencias se usaron**
+
 - Retrofit: Comunicación por API Rest
 - Picasso: Lectura y cargue de imagenes por ImageView/Uri
 - Firebase: Registro y control de logs
@@ -34,7 +39,6 @@ Si desea instalar por apk, los links son los siguientes:
 - Mockk: Uni test en Kotlin
 - Androidx: Librerias estandar de desarrollo nativo de android para el uso de Android Jetpack
 - LifeCycle: las dependencias para la adminsitración de datos temporales, gestión y cumplimiento del patrón MVVM(Model View View Model).
-
 
 **Que estructura tiene:**
 De acuerdo con el uso de Android Jetpack se utilizo dos tipos de patron estructural y de diseño:
