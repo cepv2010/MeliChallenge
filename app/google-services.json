@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "589256438288",
+    "project_id": "melichallenge-b2e94",
+    "storage_bucket": "melichallenge-b2e94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589256438288:android:59eff574cae8d882e79095",
+        "android_client_info": {
+          "package_name": "com.camiloparra.melichallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589256438288-9n0o0g5o7p68cte7s56ka7m530vmrodc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.camiloparra.melichallenge",
+            "certificate_hash": "831dace960904a8b8eba974ec93686ad24605044"
+          }
+        },
+        {
+          "client_id": "589256438288-om39rsg0ffu5371oebtnf79fh9nvvmlv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNpmTh-w3lfqnb49WQ8fzMKbwCY-Qd3bQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589256438288-om39rsg0ffu5371oebtnf79fh9nvvmlv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
