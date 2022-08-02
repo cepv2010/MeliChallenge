@@ -1,4 +1,4 @@
-package com.camiloparra.melichallenge.data.comm
+package com.camiloparra.melichallenge.data.network
 
 import android.content.Context
 import okhttp3.OkHttpClient
@@ -10,7 +10,7 @@ import javax.inject.Inject
 /**
  * Created by Camilo Parra on 7/06/2022.
  */
-class BaseDataComm @Inject constructor(var context: Context) {
+class AppNetClient @Inject constructor(var context: Context) {
 
     private var retrofit: Retrofit = Retrofit.Builder()
         .baseUrl("https://api.mercadolibre.com/")

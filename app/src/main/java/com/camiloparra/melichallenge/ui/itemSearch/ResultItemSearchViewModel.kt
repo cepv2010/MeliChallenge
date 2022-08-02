@@ -3,11 +3,11 @@ package com.camiloparra.melichallenge.ui.itemSearch
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.camiloparra.melichallenge.config.di.IoDispatcher
-import com.camiloparra.melichallenge.domain.dto.api.ItemResponse
-import com.camiloparra.melichallenge.domain.useCase.ItemSearchUseCase
+import com.camiloparra.melichallenge.data.network.dto.ItemResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import com.camiloparra.melichallenge.domain.dto.api.ItemResult
+import com.camiloparra.melichallenge.data.network.dto.ItemResult
+import com.camiloparra.melichallenge.domain.useCase.ItemSearchUseCase
 import kotlinx.coroutines.*
 
 @HiltViewModel
@@ -39,8 +39,8 @@ class ResultItemSearchViewModel @Inject constructor(
             val resp = itemSearchUseCase.getSearchResult(query, offset)
             withContext(Dispatchers.Main) {
                 when {
-                    resp.second && resp.first.paging.total != 0 -> postItemResult(resp.first)
-                    resp.second && resp.first.paging.total == 0 -> {
+                    resp.status && resp.data.paging.total != 0 -> postItemResult(resp.data)
+                    resp.status && resp.data.paging.total == 0 -> {
                         notFound.postValue(true)
                         notConn.value = false
                     }

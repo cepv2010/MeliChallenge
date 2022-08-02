@@ -1,7 +1,6 @@
-package com.camiloparra.melichallenge.domain.dto
+package com.camiloparra.melichallenge.domain.model
 
 import android.os.Parcelable
-import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 /**

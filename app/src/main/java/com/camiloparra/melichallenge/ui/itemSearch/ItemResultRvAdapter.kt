@@ -11,7 +11,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.camiloparra.melichallenge.R
 import com.squareup.picasso.Picasso
-import com.camiloparra.melichallenge.domain.dto.api.ItemResult
+import com.camiloparra.melichallenge.data.network.dto.ItemResult
 import com.camiloparra.melichallenge.util.Utils
 
 /**

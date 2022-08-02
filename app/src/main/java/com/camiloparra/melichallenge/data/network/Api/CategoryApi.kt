@@ -1,6 +1,6 @@
-package com.camiloparra.melichallenge.data.comm.Api
+package com.camiloparra.melichallenge.data.network.Api
 
-import com.camiloparra.melichallenge.domain.dto.api.Category
+import com.camiloparra.melichallenge.data.network.dto.Category
 import retrofit2.http.GET
 import retrofit2.http.Path
 

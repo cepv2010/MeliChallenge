@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import androidx.activity.viewModels
@@ -13,8 +12,6 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.camiloparra.melichallenge.config.ConstArgs
 import com.camiloparra.melichallenge.databinding.ActivitySearchBarBinding
-import com.camiloparra.melichallenge.domain.dto.api.ItemResult
-import com.camiloparra.melichallenge.domain.entity.Suggestion
 import com.camiloparra.melichallenge.ui.itemSearch.ItemSearchActivity
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -20,6 +20,6 @@
         android:label="ItemDetailFragment" >
         <argument
             android:name="detail"
-            app:argType="com.camiloparra.melichallenge.domain.dto.ArgItemResult" />
+            app:argType="com.camiloparra.melichallenge.domain.model.ArgItemResult" />
     </fragment>
 </navigation>

@@ -1,14 +1,11 @@
 package com.camiloparra.melichallenge.ui.shared.searchBar
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.camiloparra.melichallenge.config.di.IoDispatcher
-import com.camiloparra.melichallenge.domain.entity.Suggestion
+import com.camiloparra.melichallenge.data.local.entity.Suggestion
 import com.camiloparra.melichallenge.domain.useCase.SuggestionUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.*
 import javax.inject.Inject
 

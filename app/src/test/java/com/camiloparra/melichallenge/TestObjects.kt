@@ -1,9 +1,9 @@
 package com.camiloparra.melichallenge
 
-import com.camiloparra.melichallenge.domain.dto.api.ItemResponse
-import com.camiloparra.melichallenge.domain.dto.api.ItemResult
-import com.camiloparra.melichallenge.domain.dto.api.Paging
-import com.camiloparra.melichallenge.domain.entity.Suggestion
+import com.camiloparra.melichallenge.data.network.dto.ItemResponse
+import com.camiloparra.melichallenge.data.network.dto.ItemResult
+import com.camiloparra.melichallenge.data.network.dto.Paging
+import com.camiloparra.melichallenge.data.local.entity.Suggestion
 
 /**
  * Created by Camilo Parra on 9/06/2022.

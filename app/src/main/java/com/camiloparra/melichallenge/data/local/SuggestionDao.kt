@@ -1,17 +1,16 @@
-package com.camiloparra.melichallenge.data.repository
+package com.camiloparra.melichallenge.data.local
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
-import com.camiloparra.melichallenge.domain.entity.Suggestion
+import com.camiloparra.melichallenge.data.local.entity.Suggestion
 
 /**
  * Created by Camilo Parra on 10/06/2022.
  */
 @Dao
-interface SuggestionRepository {
+interface SuggestionDao {
     companion object {
         const val MAX_ROW = 10
     }

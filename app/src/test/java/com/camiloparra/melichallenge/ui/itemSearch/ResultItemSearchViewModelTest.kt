@@ -1,8 +1,7 @@
 package com.camiloparra.melichallenge.ui.itemSearch
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.camiloparra.melichallenge.domain.dto.api.ItemResponse
-import com.camiloparra.melichallenge.domain.useCase.ItemSearchUseCase
+import com.camiloparra.melichallenge.data.network.dto.ItemResponse
 import com.camiloparra.melichallenge.TestObjects
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery

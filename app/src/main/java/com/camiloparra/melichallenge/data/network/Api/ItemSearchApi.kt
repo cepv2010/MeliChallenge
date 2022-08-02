@@ -1,6 +1,6 @@
-package com.camiloparra.melichallenge.data.comm.Api
+package com.camiloparra.melichallenge.data.network.Api
 
-import com.camiloparra.melichallenge.domain.dto.api.ItemResponse
+import com.camiloparra.melichallenge.data.network.dto.ItemResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

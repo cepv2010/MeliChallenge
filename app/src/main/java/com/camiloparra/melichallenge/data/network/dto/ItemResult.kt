@@ -1,10 +1,7 @@
-package com.camiloparra.melichallenge.domain.dto.api
+package com.camiloparra.melichallenge.data.network.dto
 
-import android.os.Parcelable
-import com.camiloparra.melichallenge.domain.dto.ArgItemResult
-import com.camiloparra.melichallenge.util.Utils
+import com.camiloparra.melichallenge.domain.model.ArgItemResult
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
 
 /**
  * Dto Receive from api that represent the items result

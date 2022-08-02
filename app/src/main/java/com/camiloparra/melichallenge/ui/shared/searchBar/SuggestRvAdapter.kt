@@ -1,6 +1,5 @@
 package com.camiloparra.melichallenge.ui.shared.searchBar
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.camiloparra.melichallenge.R
-import com.camiloparra.melichallenge.domain.dto.api.ItemResult
-import com.camiloparra.melichallenge.domain.entity.Suggestion
+import com.camiloparra.melichallenge.data.local.entity.Suggestion
 
 /**
  * Created by Camilo Parra on 10/06/2022.

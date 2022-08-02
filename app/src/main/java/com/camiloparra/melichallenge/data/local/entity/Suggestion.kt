@@ -1,4 +1,4 @@
-package com.camiloparra.melichallenge.domain.entity
+package com.camiloparra.melichallenge.data.local.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -13,8 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.camiloparra.melichallenge.R
 import com.camiloparra.melichallenge.config.ConstArgs
 import com.camiloparra.melichallenge.databinding.FragmentResultItemSearchBinding
-import com.camiloparra.melichallenge.domain.dto.ArgItemResult
-import com.camiloparra.melichallenge.domain.dto.api.ItemResult
+import com.camiloparra.melichallenge.data.network.dto.ItemResult
 import com.camiloparra.melichallenge.util.Utils
 import dagger.hilt.android.AndroidEntryPoint
 

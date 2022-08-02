@@ -1,4 +1,4 @@
-package com.camiloparra.melichallenge.domain.dto.api
+package com.camiloparra.melichallenge.data.network.dto
 
 import com.google.gson.annotations.SerializedName
 
