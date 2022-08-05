@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.camiloparra.melichallenge.R
-import com.camiloparra.melichallenge.data.local.entity.Suggestion
+import com.camiloparra.melichallenge.data.local.entity.SuggestionEntity
+import com.camiloparra.melichallenge.domain.model.Suggestion
 
 /**
  * Created by Camilo Parra on 10/06/2022.

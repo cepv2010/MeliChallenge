@@ -1,6 +1,7 @@
 package com.camiloparra.melichallenge.data.network
 
 import android.content.Context
+import java.lang.Exception
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -9,11 +10,11 @@ import javax.inject.Singleton
  */
 @Singleton
 open class ResponseHandler @Inject constructor(var context: Context){
-    fun <T : Any> handleSuccess(data: T?): TypeResponse<T?> {
-        return TypeResponse.success(data)
+    fun <T : Any> handleSuccess(data: T?): Result<T?> {
+        return Result.success(data)
     }
 
-    fun <T : Any> handleError(data: T?): TypeResponse<T?> {
-        return TypeResponse.error(data)
+    fun <T : Any> handleError(): Result<T> {
+        return Result.failure(Exception())
     }
 }

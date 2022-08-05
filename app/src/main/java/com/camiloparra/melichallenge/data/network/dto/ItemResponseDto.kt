@@ -7,13 +7,13 @@ import com.google.gson.annotations.SerializedName
  *
  * Created by Camilo Parra on 7/06/2022.
  */
-class ItemResponse {
+data class ItemResponseDto(
     @SerializedName("site_id")
-    lateinit var siteId: String
+    var siteId: String,
     @SerializedName("country_default_time_zone")
-    lateinit var dTimeZone: String
-    lateinit var query: String
-    lateinit var paging: Paging
+    var dTimeZone: String,
+    var query: String = "",
+    var paging: PagingDto,
     @SerializedName("results")
-    lateinit var itemResult: List<ItemResult>
-}
+    var itemResult: List<ItemResultDto>
+)

@@ -2,10 +2,10 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "6f3c96b438e9167b9b30359245f0fa0e",
+    "identityHash": "c810440058c57639b1067944f6d65f9c",
     "entities": [
       {
-        "tableName": "Suggestion",
+        "tableName": "SuggestionEntity",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `suggest` TEXT NOT NULL)",
         "fields": [
           {
@@ -34,7 +34,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6f3c96b438e9167b9b30359245f0fa0e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c810440058c57639b1067944f6d65f9c')"
     ]
   }
 }

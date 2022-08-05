@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
  *
  * Created by Camilo Parra on 9/06/2022.
  */
-class Shipping {
+data class ShippingDto(
     @SerializedName("free_shipping")
-    var freeShipping: Boolean = false
-}
+    var freeShipping: Boolean
+)

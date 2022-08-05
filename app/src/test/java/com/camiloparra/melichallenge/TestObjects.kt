@@ -1,9 +1,9 @@
 package com.camiloparra.melichallenge
 
-import com.camiloparra.melichallenge.data.network.dto.ItemResponse
-import com.camiloparra.melichallenge.data.network.dto.ItemResult
-import com.camiloparra.melichallenge.data.network.dto.Paging
-import com.camiloparra.melichallenge.data.local.entity.Suggestion
+import com.camiloparra.melichallenge.data.network.dto.ItemResponseDto
+import com.camiloparra.melichallenge.data.network.dto.ItemResultDto
+import com.camiloparra.melichallenge.data.network.dto.PagingDto
+import com.camiloparra.melichallenge.data.local.entity.SuggestionEntity
 
 /**
  * Created by Camilo Parra on 9/06/2022.
@@ -15,27 +15,27 @@ class TestObjects {
         const val EXAMPLE_OFFSET = 0
         const val SITE_ID = "MCO"
 
-        fun getListItemResponse(): ItemResponse {
-            val firstResult = ItemResult()
+        fun getListItemResponse(): ItemResponseDto {
+            val firstResult = ItemResultDto()
             firstResult.id = "MCO845591032"
             firstResult.title = "Pc Torre Gamer Core I7 3770 8gb Ram Tarjeta Video R5 340 2gb"
             firstResult.siteId = SITE_ID
             firstResult.thumbnail = "http://http2.mlstatic.com/D_849233-MCO46392572591_062021-O.jpg"
 
-            val secondResult = ItemResult()
+            val secondResult = ItemResultDto()
             secondResult.id = "MCO867181759"
             secondResult.title = "Computador Portatil Huawei 15.6  Pulgadas Matebook D - Intel"
             secondResult.siteId = SITE_ID
             secondResult.thumbnail = "http://http2.mlstatic.com/D_849233-MCO46392572591_062021-O.jpg"
-            val listResult = listOf<ItemResult>(firstResult, secondResult)
+            val listResult = listOf<ItemResultDto>(firstResult, secondResult)
 
-            val paging = Paging()
+            val paging = PagingDto()
             paging.total = 517
             paging.primaryResult = 517
             paging.offset = 0
             paging.limit = 50
 
-            val itemResponse = ItemResponse()
+            val itemResponse = ItemResponseDto()
             itemResponse.siteId = SITE_ID
             itemResponse.dTimeZone = "GMT-05:00"
             itemResponse.query = EXAMPLE_QUERY
@@ -44,10 +44,10 @@ class TestObjects {
             return itemResponse
         }
 
-        fun getSuggestion(): List<Suggestion> {
-            val firstSuggestion = Suggestion()
+        fun getSuggestion(): List<SuggestionEntity> {
+            val firstSuggestion = SuggestionEntity()
             firstSuggestion.suggest = "-"
-            val secondSuggestion = Suggestion()
+            val secondSuggestion = SuggestionEntity()
             secondSuggestion.suggest = "-"
             return listOf(firstSuggestion, secondSuggestion)
         }

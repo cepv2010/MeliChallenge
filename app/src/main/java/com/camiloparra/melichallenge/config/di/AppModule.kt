@@ -6,10 +6,13 @@ import com.camiloparra.melichallenge.data.network.AppNetClient
 import com.camiloparra.melichallenge.data.network.ResponseHandler
 import com.camiloparra.melichallenge.data.local.AppDatabase
 import com.camiloparra.melichallenge.data.local.SuggestionDao
-import com.camiloparra.melichallenge.data.repository.SearchRepositoryImpl
-import com.camiloparra.melichallenge.domain.repository.SearchRepository
-import com.camiloparra.melichallenge.domain.useCase.ItemSearchUseCase
-import com.camiloparra.melichallenge.domain.useCase.SuggestionUseCase
+import com.camiloparra.melichallenge.data.repository.ProductRepositoryImpl
+import com.camiloparra.melichallenge.data.repository.SuggestionRepositoryImpl
+import com.camiloparra.melichallenge.domain.repository.ProductRepository
+import com.camiloparra.melichallenge.domain.repository.SuggestionRepository
+import com.camiloparra.melichallenge.domain.useCase.AddSuggestionUseCase
+import com.camiloparra.melichallenge.domain.useCase.GetSuggestionUseCase
+import com.camiloparra.melichallenge.domain.useCase.GetItemSearchUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -53,24 +56,35 @@ class AppModule {
     fun providerSuggestionDao(bdHelper: AppDatabase): SuggestionDao = bdHelper.suggestionDao()
 
     @Provides
-    fun providerSerachRepository(
+    fun providerProductRepository(
         appNetClient: AppNetClient,
-        responseHandler: ResponseHandler,
-        suggestionDao: SuggestionDao
-    ): SearchRepository = SearchRepositoryImpl(appNetClient, responseHandler, suggestionDao)
+        responseHandler: ResponseHandler
+    ): ProductRepository = ProductRepositoryImpl(appNetClient, responseHandler)
 
     @Provides
-    fun providerSuggestionUseCase(
-        searchRepository: SearchRepository
-    ): SuggestionUseCase {
-        return SuggestionUseCase(searchRepository)
+    fun providerSuggestionRepository(
+        suggestionDao: SuggestionDao
+    ): SuggestionRepository = SuggestionRepositoryImpl(suggestionDao)
+
+    @Provides
+    fun providerAddSuggestionUseCase(
+        suggestionRepository: SuggestionRepository
+    ): AddSuggestionUseCase {
+        return AddSuggestionUseCase(suggestionRepository)
     }
 
     @Provides
-    fun providerItemSearchUseCase(
-        searchRepository: SearchRepository
-    ): ItemSearchUseCase {
-        return ItemSearchUseCase(searchRepository)
+    fun providerGetSuggestionUseCase(
+        suggestionRepository: SuggestionRepository
+    ): GetSuggestionUseCase {
+        return GetSuggestionUseCase(suggestionRepository)
+    }
+
+    @Provides
+    fun providerGetItemSearchUseCase(
+        productRepository: ProductRepository
+    ): GetItemSearchUseCase {
+        return GetItemSearchUseCase(productRepository)
     }
 
 

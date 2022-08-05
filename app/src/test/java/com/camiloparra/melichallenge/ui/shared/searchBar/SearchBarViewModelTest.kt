@@ -2,7 +2,7 @@ package com.camiloparra.melichallenge.ui.shared.searchBar
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.camiloparra.melichallenge.TestObjects
-import com.camiloparra.melichallenge.data.local.entity.Suggestion
+import com.camiloparra.melichallenge.data.local.entity.SuggestionEntity
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.RelaxedMockK
@@ -40,7 +40,7 @@ class SearchBarViewModelTest{
     @Test
     fun `when the suggestion result not return data`() = runTest {
         //Given
-        val response: List<Suggestion> = listOf()
+        val response: List<SuggestionEntity> = listOf()
         coEvery {
             suggestionUseCase.getSuggestion()
         } returns response
@@ -55,7 +55,7 @@ class SearchBarViewModelTest{
     @Test
     fun `when the suggestion result return data`() = runTest {
         //Given
-        val response: List<Suggestion> = TestObjects.getSuggestion()
+        val response: List<SuggestionEntity> = TestObjects.getSuggestion()
         coEvery {
             suggestionUseCase.getSuggestion()
         } returns response

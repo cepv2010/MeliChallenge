@@ -13,7 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.camiloparra.melichallenge.R
 import com.camiloparra.melichallenge.config.ConstArgs
 import com.camiloparra.melichallenge.databinding.FragmentResultItemSearchBinding
-import com.camiloparra.melichallenge.data.network.dto.ItemResult
+import com.camiloparra.melichallenge.data.network.dto.ItemResultDto
+import com.camiloparra.melichallenge.domain.model.ItemResult
 import com.camiloparra.melichallenge.util.Utils
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -104,7 +105,7 @@ class ResultItemSearchFragment : Fragment() {
     private fun initRv() {
         rvAdapter = ItemResultRvAdapter(requireContext(), mutableListOf(), object : OnClickListener {
             override fun onItemClick(item: ItemResult, position: Int) {
-                val args = item.transformToArgs(util.setFormatPrice(item.price), item.shipping.freeShipping)
+                val args = item.transformToArgs()
                 val action = ResultItemSearchFragmentDirections
                     .actionResultItemSearchFragmentToItemDetailFragment(args)
                 requireView().findNavController().navigate(action)

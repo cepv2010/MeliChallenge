@@ -5,9 +5,7 @@ package com.camiloparra.melichallenge.data.network.dto
  *
  * Created by Camilo Parra on 7/06/2022.
  */
-class Category {
-
-    lateinit var id: String
-    lateinit var name: String
-
-}
+data class CategoryDto(
+    var id: String,
+    var name: String
+)

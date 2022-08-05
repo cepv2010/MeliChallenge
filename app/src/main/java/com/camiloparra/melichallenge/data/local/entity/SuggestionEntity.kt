@@ -10,9 +10,7 @@ import androidx.room.PrimaryKey
  * Created by Camilo Parra on 10/06/2022.
  */
 @Entity
-class Suggestion {
-
-    @PrimaryKey(autoGenerate = true) var id: Int = 0
-    @ColumnInfo lateinit var suggest: String
-
-}
+data class SuggestionEntity(
+    @PrimaryKey(autoGenerate = true) var id: Int = 0,
+    @ColumnInfo var suggest: String = ""
+)

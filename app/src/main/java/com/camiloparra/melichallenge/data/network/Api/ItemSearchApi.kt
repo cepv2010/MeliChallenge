@@ -1,6 +1,6 @@
 package com.camiloparra.melichallenge.data.network.Api
 
-import com.camiloparra.melichallenge.data.network.dto.ItemResponse
+import com.camiloparra.melichallenge.data.network.dto.ItemResponseDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -15,6 +15,6 @@ interface ItemSearchApi {
         @Path("SITE_ID") siteId: String,
         @Query("q") query: String,
         @Query("offset") offset: Int
-    ): ItemResponse
+    ): ItemResponseDto
 
 }

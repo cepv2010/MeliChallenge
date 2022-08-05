@@ -11,7 +11,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.camiloparra.melichallenge.R
 import com.squareup.picasso.Picasso
-import com.camiloparra.melichallenge.data.network.dto.ItemResult
+import com.camiloparra.melichallenge.domain.model.ItemResult
 import com.camiloparra.melichallenge.util.Utils
 
 /**
@@ -38,12 +38,12 @@ class ItemResultRvAdapter internal constructor(
         holder.tvTitle.text = cPosition.title
         holder.tvPrice.text = nPrice
 
-        if(!cPosition.shipping.freeShipping) {
+        if(!cPosition.freeShipping) {
             holder.cvFreeShipping.visibility = View.GONE
         }
 
         Picasso.get().load(cPosition.thumbnail)
-            .into(holder.ivThumbnail);
+            .into(holder.ivThumbnail)
         holder.bind(cPosition, position, listener)
     }
 

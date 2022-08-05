@@ -1,7 +1,7 @@
 package com.camiloparra.melichallenge.ui.itemSearch
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.camiloparra.melichallenge.data.network.dto.ItemResponse
+import com.camiloparra.melichallenge.data.network.dto.ItemResponseDto
 import com.camiloparra.melichallenge.TestObjects
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
@@ -60,7 +60,7 @@ class ResultItemSearchViewModelTest {
     @Test
     fun `when the use case return an empty itemResponse and false response`() = runTest() {
         //Given
-        val response = Pair(ItemResponse(), false)
+        val response = Pair(ItemResponseDto(), false)
         coEvery {
             itemSearchUseCase.getSearchResult(TestObjects.EXAMPLE_QUERY, TestObjects.EXAMPLE_OFFSET)
         } returns response

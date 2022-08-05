@@ -7,10 +7,9 @@ import com.google.gson.annotations.SerializedName
  *
  * Created by Camilo Parra on 7/06/2022.
  */
-class Paging {
-    var total: Int = 0
-    @SerializedName("primary_results")
-    var primaryResult: Int = 0
-    var offset: Int = 0
-    var limit: Int = 0
-}
+data class PagingDto(
+    var total: Int,
+    var primaryResult: Int,
+    var offset: Int,
+    var limit: Int,
+)

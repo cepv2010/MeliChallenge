@@ -5,7 +5,7 @@ import com.camiloparra.melichallenge.TestObjects
 import com.camiloparra.melichallenge.data.network.Api.ItemSearchApi
 import com.camiloparra.melichallenge.data.network.AppNetClient
 import com.camiloparra.melichallenge.data.network.ResponseHandler
-import com.camiloparra.melichallenge.data.network.dto.ItemResponse
+import com.camiloparra.melichallenge.data.network.dto.ItemResponseDto
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
@@ -21,7 +21,7 @@ import java.lang.Exception
 /**
  * Created by Camilo Parra on 9/06/2022.
  */
-class ItemSearchUseCaseImplTest {
+class GetItemSearchUseCaseImplTest {
 
     //    private var baseDataComm = mockk<BaseDataComm>()
 //    private var responseHandler = mockk<ResponseHandler>()
@@ -33,7 +33,7 @@ class ItemSearchUseCaseImplTest {
     @MockK
     private lateinit var responseHandler: ResponseHandler
 
-    private lateinit var itemSearchUseCaseImpl: ItemSearchUseCase
+    private lateinit var getItemSearchUseCaseImpl: GetItemSearchUseCase
 
     @get:Rule
     var rule =  InstantTaskExecutorRule()
@@ -41,7 +41,7 @@ class ItemSearchUseCaseImplTest {
     @Before
     fun onBefore() {
         MockKAnnotations.init(this)
-        itemSearchUseCaseImpl = ItemSearchUseCase(appNetClient, responseHandler)
+        getItemSearchUseCaseImpl = GetItemSearchUseCase(appNetClient, responseHandler)
     }
 
     @Test
@@ -54,10 +54,10 @@ class ItemSearchUseCaseImplTest {
             }.throws(Exception())
 
             //When
-            val result = itemSearchUseCaseImpl.getSearchResult(TestObjects.EXAMPLE_QUERY, TestObjects.EXAMPLE_OFFSET)
+            val result = getItemSearchUseCaseImpl.getSearchResult(TestObjects.EXAMPLE_QUERY, TestObjects.EXAMPLE_OFFSET)
 
             //Then
-            assert(result ==  Pair(ItemResponse(), false))
+            assert(result ==  Pair(ItemResponseDto(), false))
         }
     }
 
@@ -72,7 +72,7 @@ class ItemSearchUseCaseImplTest {
             } returns response
 
             //When
-            val result = itemSearchUseCaseImpl.getSearchResult(TestObjects.EXAMPLE_QUERY, TestObjects.EXAMPLE_OFFSET)
+            val result = getItemSearchUseCaseImpl.getSearchResult(TestObjects.EXAMPLE_QUERY, TestObjects.EXAMPLE_OFFSET)
 
             //Then
             assert(result == Pair(response, true))

@@ -3,17 +3,19 @@ package com.camiloparra.melichallenge.ui.itemSearch
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.camiloparra.melichallenge.config.di.IoDispatcher
-import com.camiloparra.melichallenge.data.network.dto.ItemResponse
+import com.camiloparra.melichallenge.data.network.dto.ItemResponseDto
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import com.camiloparra.melichallenge.data.network.dto.ItemResult
-import com.camiloparra.melichallenge.domain.useCase.ItemSearchUseCase
+import com.camiloparra.melichallenge.data.network.dto.ItemResultDto
+import com.camiloparra.melichallenge.domain.model.ItemResult
+import com.camiloparra.melichallenge.domain.model.ProductDetail
+import com.camiloparra.melichallenge.domain.useCase.GetItemSearchUseCase
 import kotlinx.coroutines.*
 
 @HiltViewModel
 class ResultItemSearchViewModel @Inject constructor(
     @IoDispatcher ioDispatcher: CoroutineDispatcher,
-    var itemSearchUseCase: ItemSearchUseCase
+    var getItemSearchUseCase: GetItemSearchUseCase
 ) : ViewModel() {
 
     private val job = SupervisorJob()
@@ -36,15 +38,12 @@ class ResultItemSearchViewModel @Inject constructor(
 
     fun getSearch(query: String) {
         ioScope.launch {
-            val resp = itemSearchUseCase.getSearchResult(query, offset)
+            val resp = getItemSearchUseCase.getSearchResult(query, offset)
             withContext(Dispatchers.Main) {
                 when {
-                    resp.status && resp.data.paging.total != 0 -> postItemResult(resp.data)
-                    resp.status && resp.data.paging.total == 0 -> {
-                        notFound.postValue(true)
-                        notConn.value = false
-                    }
-                    else -> {
+                    resp.isSuccess -> {
+                        postItemResult(resp.getOrNull() as ProductDetail)
+                    }else -> {
                         notConn.postValue(true)
                         notFound.value = false
                     }
@@ -54,7 +53,13 @@ class ResultItemSearchViewModel @Inject constructor(
         return
     }
 
-    private fun postItemResult(resp: ItemResponse) {
+    private fun postItemResult(resp: ProductDetail) {
+        if (resp.paging.total == 0){
+            notFound.postValue(true)
+            notConn.value = false
+            return
+        }
+
         offset += resp.paging.limit
         var aItemResult = mutableListOf<ItemResult>()
         if (itemResult.value != null) {

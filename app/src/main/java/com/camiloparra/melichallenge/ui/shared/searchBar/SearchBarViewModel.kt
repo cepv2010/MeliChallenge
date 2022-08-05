@@ -3,8 +3,9 @@ package com.camiloparra.melichallenge.ui.shared.searchBar
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.camiloparra.melichallenge.config.di.IoDispatcher
-import com.camiloparra.melichallenge.data.local.entity.Suggestion
-import com.camiloparra.melichallenge.domain.useCase.SuggestionUseCase
+import com.camiloparra.melichallenge.domain.model.Suggestion
+import com.camiloparra.melichallenge.domain.useCase.AddSuggestionUseCase
+import com.camiloparra.melichallenge.domain.useCase.GetSuggestionUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import javax.inject.Inject
@@ -15,7 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class SearchBarViewModel @Inject constructor(
     @IoDispatcher ioDispatcher: CoroutineDispatcher,
-    var suggestionUseCase: SuggestionUseCase
+    var addSuggestionUseCase: AddSuggestionUseCase,
+    var getSuggestionUseCase: GetSuggestionUseCase
 ) :  ViewModel() {
 
     private val job = SupervisorJob()
@@ -24,16 +26,17 @@ class SearchBarViewModel @Inject constructor(
 
     fun getSuggestion(){
         ioScope.launch{
-            val rSuggestion = suggestionUseCase.getSuggestion()
+            val rSuggestion = getSuggestionUseCase.getSuggestion()
             suggestionResult.postValue(rSuggestion)
         }
     }
 
     fun insertSuggestion(query: String){
-        val suggestion = Suggestion()
-        suggestion.suggest = query
+        val suggestion = Suggestion(
+            suggest = query
+        )
         ioScope.launch{
-            suggestionUseCase.insertSuggestion(suggestion)
+            addSuggestionUseCase.insertSuggestion(suggestion)
         }
     }
 
