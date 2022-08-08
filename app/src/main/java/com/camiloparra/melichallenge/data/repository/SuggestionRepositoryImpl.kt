@@ -1,6 +1,6 @@
 package com.camiloparra.melichallenge.data.repository
 
-import com.camiloparra.melichallenge.data.adapter.SuggestionAdapter
+import com.camiloparra.melichallenge.domain.adapter.SuggestionAdapter
 import com.camiloparra.melichallenge.data.local.entity.SuggestionEntity
 import com.camiloparra.melichallenge.data.local.SuggestionDao
 import com.camiloparra.melichallenge.domain.model.Suggestion
@@ -13,8 +13,8 @@ class SuggestionRepositoryImpl @Inject constructor(
 
     override suspend fun getSuggestion(): List<Suggestion> =
         suggestionDao.getAll().map {
-            val adapter = SuggestionAdapter(it)
-            adapter.toModel() as Suggestion
+            val adapter = SuggestionAdapter()
+            adapter.toModel(it)
         }
 
     override suspend fun insertSuggestion(suggestion: SuggestionEntity) =

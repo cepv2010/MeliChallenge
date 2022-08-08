@@ -1,6 +1,6 @@
 package com.camiloparra.melichallenge.domain.useCase
 
-import com.camiloparra.melichallenge.data.adapter.SuggestionAdapter
+import com.camiloparra.melichallenge.domain.adapter.SuggestionAdapter
 import com.camiloparra.melichallenge.data.local.entity.SuggestionEntity
 import com.camiloparra.melichallenge.domain.model.Suggestion
 import com.camiloparra.melichallenge.domain.repository.ProductRepository
@@ -19,7 +19,7 @@ class AddSuggestionUseCase @Inject constructor(
     private val suggestionRepository: SuggestionRepository
 ) {
     suspend fun insertSuggestion(suggestion: Suggestion) {
-        val adapter = SuggestionAdapter(suggestion)
-        suggestionRepository.insertSuggestion(adapter.toData() as SuggestionEntity)
+        val adapter = SuggestionAdapter()
+        suggestionRepository.insertSuggestion(adapter.fromModel(suggestion))
     }
 }

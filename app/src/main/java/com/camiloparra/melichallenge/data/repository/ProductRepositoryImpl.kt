@@ -1,6 +1,6 @@
 package com.camiloparra.melichallenge.data.repository
 
-import com.camiloparra.melichallenge.data.adapter.ProductAdapter
+import com.camiloparra.melichallenge.domain.adapter.ProductAdapter
 import com.camiloparra.melichallenge.data.network.Api.ItemSearchApi
 import com.camiloparra.melichallenge.data.network.AppNetClient
 import com.camiloparra.melichallenge.data.network.ResponseHandler
@@ -19,8 +19,8 @@ class ProductRepositoryImpl @Inject constructor(
         return try {
             val api = appNetClient.getApi(ItemSearchApi::class.java)
             val resp = responseHandler.handleSuccess(api.getSearch("MCO", query, offset))
-            val adapter = ProductAdapter(resp.getOrNull())
-            Result.success(adapter.toModel())
+            val adapter = ProductAdapter()
+            Result.success(adapter.toModel(resp.getOrNull()!!))
         } catch (e: Exception) {
             Firebase.crashlytics.recordException(e)
             responseHandler.handleError()
